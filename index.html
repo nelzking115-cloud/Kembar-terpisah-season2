@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<title>Season 2 - Kembar Terpisah</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b0b0b;
+    font-family: Georgia, serif;
+    color: white;
+  }
+
+  .box {
+    width: 85%;
+    max-width: 800px;
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+
+  h1 {
+    color: gold;
+    font-size: 28px;
+  }
+
+  h2 {
+    color: #aaa;
+    font-size: 16px;
+  }
+
+  .text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    min-height: 200px;
+  }
+
+  .buttons {
+    margin-top: 25px;
+  }
+
+  button {
+    padding: 10px 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 5px;
+  }
+
+  .next {
+    background: gold;
+  }
+
+  .next:hover {
+    background: #ffcc00;
+  }
+
+  .back {
+    background: gold;
+    color: black;
+  }
+
+  .back:hover {
+    background: #ffcc00;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>SEASON 2 - KEMBAR TERPISAH</h2>
+  <h1>BAB 2</h1>
+
+  <div class="text" id="content">
+    SELAMAT MENONTON / SELAMAT MEMBACA<br><br>
+    Tekan NEXT untuk mula cerita.
+  </div>
+
+  <div class="buttons">
+    <button class="next" onclick="next()">➡ NEXT</button>
+    <button class="back" onclick="back()">⬅ BACK</button>
+  </div>
+
+</div>
+
+<script>
+let step = 0;
+
+function next(){
+  if(step < 3) step++;
+  updateStory();
+}
+
+function back(){
+  if(step > 0) step--;
+  updateStory();
+}
+
+function updateStory(){
+
+  if(step == 0){
+    document.getElementById("content").innerHTML =
+    "SELAMAT MENONTON / SELAMAT MEMBACA<br><br>Tekan NEXT untuk mula cerita.";
+  }
+
+  else if(step == 1){
+    document.getElementById("content").innerHTML =
+    "Dana ialah CEO nasi kuning di bandar.<br><br>" +
+    "Gerai dia sangat popular sampai ramai orang sanggup beratur setiap pagi.";
+  }
+
+  else if(step == 2){
+    document.getElementById("content").innerHTML =
+    "Raim pula tinggal di kampung.<br><br>" +
+    "Dia suka buat content TikTok setiap hari untuk hiburan dan suka buat lawak random.";
+  }
+
+  else if(step == 3){
+    document.getElementById("content").innerHTML =
+    "Satu hari, video TikTok Raim mula mendapat perhatian ramai.<br><br>" +
+    "Tanpa dia sedar, video itu sampai ke bandar… dan Dana mula nampak sesuatu yang menarik.";
+  }
+}
+</script>
+
+</body>
+</html>
